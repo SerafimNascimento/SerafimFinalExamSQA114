@@ -29,7 +29,7 @@ data "aws_ami" "amazon_linux_x86" {
   }
 }
 
-# 1. Jenkins Controller
+# To create the Jenkins Controller
 resource "aws_instance" "jenkins_controller" {
   ami                         = data.aws_ami.amazon_linux_x86.id
   instance_type               = var.instance_type
@@ -62,7 +62,7 @@ resource "aws_instance" "jenkins_controller" {
   tags = merge(local.common_tags, { Name = "JenkinsController" })
 }
 
-# 2. Jenkins Agent (permanent) -> This one will use the pipeline
+# To create the Jenkins Agent (permanent) -> This one will use the pipeline
 resource "aws_instance" "jenkins_agent_permanent" {
   ami                         = data.aws_ami.amazon_linux_x86.id
   instance_type               = var.instance_type
@@ -95,7 +95,7 @@ resource "aws_instance" "jenkins_agent_permanent" {
   tags = merge(local.common_tags, { Name = "JenkinsAgentPermanent" })
 }
 
-# 3. Jenkins Agent (dynamic)
+# To create the Jenkins Agent (dynamic)
 resource "aws_instance" "jenkins_agent_dynamic" {
   ami                         = data.aws_ami.amazon_linux_x86.id
   instance_type               = var.instance_type
@@ -108,7 +108,7 @@ resource "aws_instance" "jenkins_agent_dynamic" {
   tags = merge(local.common_tags, { Name = "JenkinsAgentDynamic" })
 }
 
-# 4. Testing
+# To create the Testing
 resource "aws_instance" "testing" {
   ami                         = data.aws_ami.amazon_linux_x86.id
   instance_type               = var.instance_type
@@ -121,7 +121,7 @@ resource "aws_instance" "testing" {
   tags = merge(local.common_tags, { Name = "Testing" })
 }
 
-# 5. Staging
+# To create the Staging
 resource "aws_instance" "staging" {
   ami                         = data.aws_ami.amazon_linux_x86.id
   instance_type               = var.instance_type
@@ -134,7 +134,7 @@ resource "aws_instance" "staging" {
   tags = merge(local.common_tags, { Name = "Staging" })
 }
 
-# 6. Prod_Env1
+# To create the Prod_Env1
 resource "aws_instance" "prod_env1" {
   ami                         = data.aws_ami.amazon_linux_x86.id
   instance_type               = var.instance_type
@@ -147,7 +147,7 @@ resource "aws_instance" "prod_env1" {
   tags = merge(local.common_tags, { Name = "Production_Env1" })
 }
 
-# 7. Prod_Env2
+# To create the Prod_Env2
 resource "aws_instance" "prod_env2" {
   ami                         = data.aws_ami.amazon_linux_x86.id
   instance_type               = var.instance_type
