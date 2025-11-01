@@ -332,7 +332,7 @@ function cellClicked(id) {
         return false;
     }
     moves += 1;
-    document.getElementById(id).innerHTML = "playerText"; // Before it was "playerText". To Correct it replace it with "X"
+    document.getElementById(id).innerHTML = "X"; // Before it was "playerText". To Correct it replace it with "X"
     /*
     For the line 335:
     - With bug it should be:
@@ -474,7 +474,7 @@ function makeComputerMove() {
     }
     var id = "cell" + cell.toString();
     // console.log("computer chooses " + id);
-    document.getElementById(id).innerHTML = computerText; // Before it was computerText. To Correct it replace it with "O"
+    document.getElementById(id).innerHTML = "O"; // Before it was computerText. To Correct it replace it with "O"
     /*
     For the line 470:
     - With bug it should be:
